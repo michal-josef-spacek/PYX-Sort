@@ -1,0 +1,28 @@
+#!/usr/bin/env perl
+
+# Pragmas.
+use strict;
+use warnings;
+
+# Modules.
+use PYX::Sort;
+
+# Arguments.
+if ($#ARGV < 0) {
+	print "Usage: $0 [filename] [-]\n";
+	print "\tfilename\tprocess on filename\n";
+	print "\t-\t\tprocess on stdin\n";
+	exit 1;
+}
+
+# PYX::Sort object.
+my $sorter = PYX::Sort->new;
+
+# Parse from stdin.
+if ($ARGV[0] eq '-') {
+	$sorter->parse_handler(\*STDIN);
+
+# Parse file.
+} else {
+	$sorter->parse_file($ARGV[0]);
+}
