@@ -6,16 +6,13 @@ use warnings;
 use File::Object;
 use PYX::Sort;
 use Test::More 'tests' => 2;
+use Test::Output;
 
 # Directories.
 my $data_dir = File::Object->new->up->dir('data');
 
-# Include helpers.
-do File::Object->new->up->file('get_stdout.inc')->s;
-
 # Test.
 my $obj = PYX::Sort->new;
-my $ret = get_stdout($obj, $data_dir->file('ex1.pyx')->s);
 my $right_ret = <<"END";
 (tag
 Aattr1="value"
@@ -24,8 +21,19 @@ Aattr3="value"
 -text
 )tag
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex1.pyx')->s);
+		return;
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex2.pyx')->s);
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex2.pyx')->s);
+		return;
+	},
+	$right_ret,
+);
