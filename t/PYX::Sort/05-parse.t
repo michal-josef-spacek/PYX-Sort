@@ -9,7 +9,6 @@ my $data_dir = File::Object->new->up->dir('data');
 # Include helpers.
 do File::Object->new->up->file('get_stdout.inc')->s;
 
-print "Testing: parse() method.\n";
 my $obj = PYX::Sort->new;
 my $ret = get_stdout($obj, $data_dir->file('example6.pyx')->s);
 my $right_ret = <<"END";
