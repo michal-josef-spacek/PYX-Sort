@@ -9,6 +9,7 @@ my $data_dir = File::Object->new->up->dir('data');
 # Include helpers.
 do File::Object->new->up->file('get_stdout.inc')->s;
 
+# Test.
 my $obj = PYX::Sort->new;
 my $ret = get_stdout($obj, $data_dir->file('example6.pyx')->s);
 my $right_ret = <<"END";
@@ -21,5 +22,6 @@ Aattr3="value"
 END
 is($ret, $right_ret);
 
+# Test.
 $ret = get_stdout($obj, $data_dir->file('example7.pyx')->s);
 is($ret, $right_ret);
