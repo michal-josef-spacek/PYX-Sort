@@ -22,6 +22,7 @@ WriteMakefile(
 	'EXE_FILES' => [
 		'bin/pyx_attr_sort',
 	],
+	'LICENSE' => 'bsd',
 	'NAME' => 'PYX::Sort',
 	'PREREQ_PM' => {
 		'Class::Utils' => 0.01,
