@@ -17,9 +17,9 @@ README
 Sort.pm
 t/data/ex1.pyx
 t/data/ex2.pyx
-t/PYX::Sort/00-use.t
-t/PYX::Sort/01-version.t
-t/PYX::Sort/02-pod_coverage.t
-t/PYX::Sort/03-pod.t
-t/PYX::Sort/04-new.t
-t/PYX::Sort/05-parse.t
+t/PYX-Sort/00-use.t
+t/PYX-Sort/01-version.t
+t/PYX-Sort/02-pod_coverage.t
+t/PYX-Sort/03-pod.t
+t/PYX-Sort/04-new.t
+t/PYX-Sort/05-parse.t
