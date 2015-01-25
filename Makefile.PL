@@ -8,7 +8,6 @@ use inc::Module::Install;
 # Definition.
 abstract 'TODO';
 author 'Michal Spacek <skim@cpan.org>';
-install_script 'bin/pyx_attr_sort';
 license 'bsd';
 name 'PYX-Sort';
 readme_from 'Sort.pm';

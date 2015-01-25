@@ -1,4 +1,3 @@
-bin/pyx_attr_sort
 Changes
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
