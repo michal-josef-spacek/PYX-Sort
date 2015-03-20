@@ -51,8 +51,8 @@ sub parse {
 
 # Parse file with pyx text.
 sub parse_file {
-	my ($self, $file) = @_;
-	$self->{'pyx_parser'}->parse_file($file);
+	my ($self, $file, $out) = @_;
+	$self->{'pyx_parser'}->parse_file($file, $out);
 	return;
 }
 
@@ -103,11 +103,15 @@ __END__
 
 =head1 NAME
 
-PYX::Sort - TODO
+PYX::Sort - Processing PYX data or file and sort element attributes.
 
 =head1 SYNOPSIS
 
-TODO
+ use PYX::Sort;
+ my $obj = PYX::Sort->new(%parameters);
+ $obj->parse($pyx, $out);
+ $obj->parse_file($input_file, $out);
+ $obj->parse_handle($input_file_handler, $out);
 
 =head1 METHODS
 
@@ -121,31 +125,36 @@ TODO
 
 =item * C<output_handler>
 
-TODO
+ Output handler.
+ Default value is \*STDOUT.
 
 =back
 
-=item C<parse()>
+=item C<parse($pyx[, $out])>
 
-TODO
+ Parse PYX text or array of PYX text and print sorted list of element attributes in PYX format.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
-=item C<parse_file()>
+=item C<parse_file($input_file[, $out])>
 
-TODO
+ Parse file with PYX data and print sorted list of element attributes in PYX format.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
-=item C<parse_handler()>
+=item C<parse_handler($input_file[, $out])>
 
-TODO
+ Parse PYX handler print sorted list of element attributes in PYX format.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
 =back
 
 =head1 ERRORS
 
- Mine:
-   TODO
-
- From Class::Utils::set_params():
-   Unknown parameter '%s'.
+ new():
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
 
 =head1 EXAMPLE
 
@@ -156,10 +165,29 @@ TODO
  # Modules.
  use PYX::Sort;
 
+ # Example data.
+ my $pyx = <<'END';
+ (tag
+ Aattr1 value
+ Aattr2 value
+ Aattr3 value
+ -text
+ )tag
+ END
+
  # PYX::Sort object.
- my $pyx = PYX::Sort->new(
-         TODO
- );
+ my $obj = PYX::Sort->new;
+
+ # Parse.
+ $obj->parse($pyx);
+
+ # Output:
+ # (tag
+ # Aattr1="value"
+ # Aattr2="value"
+ # Aattr3="value"
+ # -text
+ # )tag
 
 =head1 DEPENDENCIES
 
@@ -168,7 +196,13 @@ L<PYX::Parser>.
 
 =head1 SEE ALSO
 
-TODO
+L<PYX>,
+L<PYX::GraphViz>,
+L<PYX::Hist>,
+L<PYX::Parser>,
+L<PYX::Stack>,
+L<PYX::Utils>,
+L<Task::PYX>.
 
 =head1 REPOSITORY
 
