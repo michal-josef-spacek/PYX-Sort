@@ -12,9 +12,6 @@ use PYX::Parser;
 # Version.
 our $VERSION = 0.01;
 
-# Global variables.
-our $TAG;
-
 # Constructor.
 sub new {
 	my ($class, @params) = @_;
@@ -28,17 +25,19 @@ sub new {
 
 	# PYX::Parser object.
 	$self->{'pyx_parser'} = PYX::Parser->new(
+		'callbacks' => {
+			'attribute' => \&_attribute,
+			'start_element' => \&_tag,
+			'end_element' => \&_tag,
+			'comment' => \&_tag,
+			'instruction' => \&_tag,
+			'data' => \&_tag,
+		},
+		'non_parser_options' => {
+			'tag' => {},
+		},
 		'output_handler' => $self->{'output_handler'},
-		'attribute' => \&_attribute,
-		'start_tag' => \&_tag,
-		'end_tag' => \&_tag,
-		'comment' => \&_tag,
-		'instruction' => \&_tag,
-		'data' => \&_tag,
 	);
-
-	# Tag values.
-	$TAG = {};
 
 	# Object.
 	return $self;
@@ -68,7 +67,7 @@ sub parse_handler {
 # Process attribute.
 sub _attribute {
 	my ($pyx_parser_obj, $att, $attval) = @_;
-	$TAG->{$att} = $attval;
+	$pyx_parser_obj->{'non_parser_options'}->{'tag'}->{$att} = $attval;
 	return;
 }
 
@@ -77,7 +76,7 @@ sub _tag {
 	my $pyx_parser_obj = shift;
 	my $out = $pyx_parser_obj->{'output_handler'};
 	_flush($pyx_parser_obj);
-	print {$out} $pyx_parser_obj->{'line'}, "\n";
+	print {$out} $pyx_parser_obj->line, "\n";
 	return;
 }
 
@@ -85,12 +84,13 @@ sub _tag {
 sub _flush {
 	my $pyx_parser_obj = shift;
 	my $out = $pyx_parser_obj->{'output_handler'};
-	if (scalar %{$TAG}) {
-		foreach my $key (sort keys %{$TAG}) {
-			print {$out} 'A'.$key.'="'.$TAG->{$key}.'"'."\n";
-		}
-		$TAG = {};
+	foreach my $key (sort keys %{$pyx_parser_obj->{'non_parser_options'}
+		->{'tag'}}) {
+
+		print {$out} 'A'.$key.'="'.$pyx_parser_obj
+			->{'non_parser_options'}->{'tag'}->{$key}.'"'."\n";
 	}
+	$pyx_parser_obj->{'non_parser_options'}->{'tag'} = {};
 	return;
 }
 
