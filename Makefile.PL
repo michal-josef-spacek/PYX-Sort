@@ -6,7 +6,7 @@ use warnings;
 use inc::Module::Install;
 
 # Definition.
-abstract 'TODO';
+abstract 'Processing PYX data or file and sort element attributes.';
 author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 name 'PYX-Sort';
