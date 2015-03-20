@@ -6,7 +6,6 @@ use warnings;
 
 # Modules.
 use Class::Utils qw(set_params);
-use Error::Pure qw(err);
 use PYX::Parser;
 
 # Version.
@@ -165,7 +164,6 @@ TODO
 =head1 DEPENDENCIES
 
 L<Class::Utils>,
-L<Error::Pure>,
 L<PYX::Parser>.
 
 =head1 SEE ALSO

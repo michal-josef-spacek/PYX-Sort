@@ -42,7 +42,7 @@ EXAMPLE
      );
 
 DEPENDENCIES
-    Class::Utils, Error::Pure, PYX::Parser.
+    Class::Utils, PYX::Parser.
 
 SEE ALSO
     TODO

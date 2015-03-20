@@ -12,7 +12,6 @@ license 'bsd';
 name 'PYX-Sort';
 readme_from 'Sort.pm';
 requires 'Class::Utils' => 0.05;
-requires 'Error::Pure' => 0.15;
 requires 'PYX::Parser' => 0.01;
 requires 'perl' => '5.6.2';
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
