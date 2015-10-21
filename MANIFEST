@@ -1,6 +1,8 @@
 Changes
 examples/ex1.pl
 inc/Module/Install.pm
+inc/Module/Install/AuthorRequires.pm
+inc/Module/Install/AuthorTests.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
@@ -18,9 +20,9 @@ SIGNATURE
 Sort.pm
 t/data/ex1.pyx
 t/data/ex2.pyx
-t/PYX-Sort/00-use.t
-t/PYX-Sort/01-version.t
-t/PYX-Sort/02-pod_coverage.t
-t/PYX-Sort/03-pod.t
-t/PYX-Sort/04-new.t
-t/PYX-Sort/05-parse.t
+t/PYX-Sort/01-use.t
+t/PYX-Sort/02-version.t
+t/PYX-Sort/03-new.t
+t/PYX-Sort/04-parse.t
+xt/PYX-Sort/01-pod_coverage.t
+xt/PYX-Sort/02-pod.t
