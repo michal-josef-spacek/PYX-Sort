@@ -73,8 +73,8 @@ DEPENDENCIES
     Class::Utils, PYX::Parser.
 
 SEE ALSO
-    PYX, PYX::GraphViz, PYX::Hist, PYX::Parser, PYX::Stack, PYX::Utils,
-    Task::PYX.
+    Task::PYX
+        Install the PYX modules.
 
 REPOSITORY
     <https://github.com/tupinek/PYX-Sort>
