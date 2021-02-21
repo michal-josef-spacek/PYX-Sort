@@ -206,7 +206,7 @@ Install the PYX modules.
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/PYX-Sort>
+L<https://github.com/michal-josef-spacek/PYX-Sort>
 
 =head1 AUTHOR
 
