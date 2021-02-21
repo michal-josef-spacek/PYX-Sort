@@ -1,4 +1,5 @@
 0.04
+ - Update Module::Install to 1.19 version.
 
 0.03 2015-10-21T15:02:50+02:00
  - Add tests for parse() and parse_handler() methods.
