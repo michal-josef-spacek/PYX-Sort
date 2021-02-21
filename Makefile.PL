@@ -22,8 +22,7 @@ recursive_author_tests('xt');
 requires 'Class::Utils' => 0.05;
 requires 'PYX::Parser' => 0.03;
 requires 'perl' => '5.6.0';
-resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
-	'?Name=PYX-Sort';
+resources 'bugtracker' => 'https://github.com/michal-josef-spacek/PYX-Sort/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/PYX-Sort';
 resources 'repository' => 'git://github.com/michal-josef-spacek/PYX-Sort';
 test_requires 'English' => 0;
