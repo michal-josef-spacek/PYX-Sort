@@ -105,6 +105,7 @@ PYX::Sort - Processing PYX data or file and sort element attributes.
 =head1 SYNOPSIS
 
  use PYX::Sort;
+
  my $obj = PYX::Sort->new(%parameters);
  $obj->parse($pyx, $out);
  $obj->parse_file($input_file, $out);
