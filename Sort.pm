@@ -164,9 +164,9 @@ PYX::Sort - Processing PYX data or file and sort element attributes.
  # Example data.
  my $pyx = <<'END';
  (tag
- Aattr1 value
- Aattr2 value
  Aattr3 value
+ Aattr2 value
+ Aattr1 value
  -text
  )tag
  END

@@ -8,9 +8,9 @@ use PYX::Sort;
 # Example data.
 my $pyx = <<'END';
 (tag
-Aattr1 value
-Aattr2 value
 Aattr3 value
+Aattr2 value
+Aattr1 value
 -text
 )tag
 END
