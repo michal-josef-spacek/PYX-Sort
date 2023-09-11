@@ -1,7 +1,7 @@
 0.04
  - Fix bugtracker.
  - Fix use lib '.' in Makefile.PL.
- - Update Module::Install to 1.19 version.
+ - Update Module::Install to 1.21 version.
  - Update author github username.
  - Update author username.
  - Update copyright years.
