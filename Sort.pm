@@ -1,14 +1,11 @@
 package PYX::Sort;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use PYX::Parser;
 
-# Version.
 our $VERSION = 0.04;
 
 # Constructor.
@@ -158,11 +155,9 @@ PYX::Sort - Processing PYX data or file and sort element attributes.
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use PYX::Sort;
 
  # Example data.
