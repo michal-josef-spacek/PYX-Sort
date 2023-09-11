@@ -156,6 +156,8 @@ PYX::Sort - Processing PYX data or file and sort element attributes.
 
 =head1 EXAMPLE
 
+=for comment filename=sort_element_attributes.pl
+
  use strict;
  use warnings;
 
