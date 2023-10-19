@@ -113,40 +113,50 @@ PYX::Sort - Processing PYX data or file and sort element attributes.
 
 =head1 METHODS
 
-=over 8
+=head2 C<new>
 
-=item C<new(%parameters)>
+ my $obj = PYX::Sort->new(%parameters);
 
- Constructor.
+Constructor.
 
 =over 8
 
 =item * C<output_handler>
 
- Output handler.
- Default value is \*STDOUT.
+Output handler.
+
+Default value is \*STDOUT.
 
 =back
 
-=item C<parse($pyx[, $out])>
+Returns instance of object.
 
- Parse PYX text or array of PYX text and print sorted list of element attributes in PYX format.
- If $out not present, use 'output_handler'.
- Returns undef.
+=head2 C<parse>
 
-=item C<parse_file($input_file[, $out])>
+ $obj->parse($pyx, $out);
 
- Parse file with PYX data and print sorted list of element attributes in PYX format.
- If $out not present, use 'output_handler'.
- Returns undef.
+Parse PYX text or array of PYX text and print sorted list of element attributes in PYX format.
+If C<$out> not present, use 'output_handler'.
 
-=item C<parse_handler($input_file[, $out])>
+Returns undef.
 
- Parse PYX handler print sorted list of element attributes in PYX format.
- If $out not present, use 'output_handler'.
- Returns undef.
+=head2 C<parse_file>
 
-=back
+ $obj->parse_file($input_file, $out);
+
+Parse file with PYX data and print sorted list of element attributes in PYX format.
+If C<$out> not present, use 'output_handler'.
+
+Returns undef.
+
+=head2 C<parse_handler>
+
+ $obj->parse_handler($input_file_handler, $out);
+
+Parse PYX handler print sorted list of element attributes in PYX format.
+If C<$out> not present, use 'output_handler'.
+
+Returns undef.
 
 =head1 ERRORS
 
